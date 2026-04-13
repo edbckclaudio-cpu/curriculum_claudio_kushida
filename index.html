@@ -8,6 +8,7 @@
     <style>
         :root {
             --primary: #2563eb;
+            --primary-dark: #1e40af;
             --text-dark: #1f2937;
             --text-light: #6b7280;
             --bg-light: #f9fafb;
@@ -15,11 +16,7 @@
             --border: #e5e7eb;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -38,7 +35,6 @@
             border-radius: 8px;
         }
 
-        /* Header */
         header {
             border-bottom: 2px solid var(--primary);
             padding-bottom: 20px;
@@ -48,31 +44,15 @@
             align-items: flex-end;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            color: var(--text-dark);
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
+        h1 { font-size: 2.5rem; letter-spacing: -1px; text-transform: uppercase; }
 
-        .contact-info {
-            text-align: right;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
+        .contact-info { text-align: right; font-size: 0.9rem; color: var(--text-light); }
+        .contact-info a { color: var(--primary); text-decoration: none; }
 
-        .contact-info a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        /* Seções */
-        section {
-            margin-bottom: 35px;
-        }
+        section { margin-bottom: 35px; }
 
         h2 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--primary);
             text-transform: uppercase;
             margin-bottom: 15px;
@@ -80,41 +60,13 @@
             padding-left: 15px;
         }
 
-        p {
-            margin-bottom: 10px;
-        }
+        .job { margin-bottom: 25px; }
+        .job-header { display: flex; justify-content: space-between; font-weight: 700; }
+        .job-date { color: var(--text-light); font-weight: 400; }
 
-        /* Experiência */
-        .job {
-            margin-bottom: 25px;
-        }
+        ul { list-style-position: inside; margin-left: 10px; }
+        li { margin-bottom: 5px; }
 
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .job-title {
-            color: var(--text-dark);
-        }
-
-        .job-date {
-            color: var(--text-light);
-            font-weight: 400;
-        }
-
-        ul {
-            list-style-position: inside;
-            margin-left: 10px;
-        }
-
-        li {
-            margin-bottom: 5px;
-        }
-
-        /* Cards de Apps (Builder) */
         .app-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -126,12 +78,10 @@
             border: 1px solid var(--border);
             padding: 15px;
             border-radius: 6px;
+            transition: transform 0.2s;
         }
 
-        .app-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
+        .app-card:hover { transform: translateY(-2px); border-color: var(--primary); }
 
         .play-store-btn {
             display: inline-block;
@@ -142,20 +92,9 @@
             text-decoration: none;
             font-size: 0.8rem;
             margin-top: 10px;
-            transition: opacity 0.2s;
         }
 
-        .play-store-btn:hover {
-            opacity: 0.8;
-        }
-
-        /* Competências */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
+        .skills-container { display: flex; flex-wrap: wrap; gap: 8px; }
         .skill-tag {
             background: #eff6ff;
             color: var(--primary);
@@ -163,6 +102,16 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
+        }
+
+        .intl-badge {
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-left: 10px;
         }
 
         @media (max-width: 768px) {
@@ -174,8 +123,7 @@
 
         @media print {
             body { background: white; padding: 0; }
-            .container { box-shadow: none; border: none; width: 100%; max-width: 100%; }
-            .play-store-btn { border: 1px solid #000; color: #000; background: transparent; }
+            .container { box-shadow: none; width: 100%; }
         }
     </style>
 </head>
@@ -198,83 +146,97 @@
         <section>
             <h2>Resumo Profissional</h2>
             <p>
-                Especialista com mais de 25 anos de experiência em infraestrutura crítica de telecomunicações e redes. Atualmente, foco na atuação como <strong>Builder</strong>, desenvolvendo aplicações multiplataforma Full Stack com foco em automação de processos e eficiência de negócios. Expertise no gerenciamento de projetos complexos, análise de KPIs e desenvolvimento acelerado assistido por IA.
+                Especialista com vasta trajetória internacional no gerenciamento de projetos críticos de upgrade de software e hardware em redes de larga escala. Atualmente, foco na atuação como <strong>Builder</strong>, desenvolvendo soluções Full Stack de ponta a ponta (Next.js/Supabase) integradas a modelos de IA para resolver dores reais de negócio. Experiência consolidada na liderança de times multiculturais e suporte estratégico de alto nível.
             </p>
         </section>
 
         <section>
-            <h2>Competências Técnicas</h2>
+            <h2>Competências & Idiomas</h2>
             <div class="skills-container">
                 <span class="skill-tag">Next.js / React</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">Tailwind CSS / Shadcn</span>
                 <span class="skill-tag">Supabase / PostgreSQL</span>
-                <span class="skill-tag">Kubernetes / OpenStack</span>
-                <span class="skill-tag">Core Network (3G/4G/5G)</span>
-                <span class="skill-tag">AI-Native Development (Trae/Windsurf)</span>
-                <span class="skill-tag">Wireshark Troubleshooting</span>
+                <span class="skill-tag">AI-Native IDEs (Trae / Windsurf)</span>
+                <span class="skill-tag">Kubernetes / OpenStack Virtualization</span>
+                <span class="skill-tag">Troubleshooting Wireshark / KPI Analysis</span>
+                <span class="skill-tag">Inglês Fluente</span>
+                <span class="skill-tag">Espanhol Fluente</span>
+                <span class="skill-tag">Japonês (Básico)</span>
             </div>
         </section>
 
         <section>
-            <h2>Experiência como App Builder</h2>
-            <p>Desenvolvimento de produtos digitais funcionais utilizando stacks modernas e IA.</p>
-            
+            <h2>Projetos como Software Builder</h2>
             <div class="app-grid">
                 <div class="app-card">
                     <h3>LucraJá</h3>
-                    <p>Calculadora de lucro para marketplaces (Mercado Livre/Shopee) com gestão de impostos MEI.</p>
-                    <a href="https://sl1nk.com/lucraja" class="play-store-btn">Disponível na Play Store</a>
+                    <p>Calculadora de lucros para vendedores de marketplaces. Gestão de impostos MEI e taxas de plataforma.</p>
+                    <a href="https://sl1nk.com/lucraja" class="play-store-btn">Baixar na Play Store</a>
                 </div>
                 <div class="app-card">
                     <h3>DiligenceGo</h3>
-                    <p>Ferramenta de compliance e auditoria para consulta de dados CVM e análise de riscos.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.diligencego.app" class="play-store-btn">Disponível na Play Store</a>
+                    <p>App de compliance para auditoria de dados cadastrais e consultas junto à CVM.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.diligencego.app" class="play-store-btn">Baixar na Play Store</a>
                 </div>
                 <div class="app-card">
                     <h3>LicitMASA</h3>
-                    <p>Monitoramento inteligente de licitações públicas via API do PNCP.</p>
-                    <a href="#" class="play-store-btn">Disponível na Play Store</a>
+                    <p>Plataforma de monitoramento de licitações públicas consumindo dados via API do PNCP.</p>
+                    <a href="#" class="play-store-btn">Baixar na Play Store</a>
                 </div>
                 <div class="app-card">
                     <h3>Reserva Vila</h3>
-                    <p>Sistema de gestão de reservas em tempo real para o Restaurante Vila das Meninas.</p>
+                    <p>Sistema multiplataforma de gestão de reservas com sincronização em tempo real.</p>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>Experiência Corporativa</h2>
+            <h2>Experiência Profissional</h2>
             
             <div class="job">
                 <div class="job-header">
-                    <span class="job-title">Ericsson Telecomunicações Ltda</span>
+                    <span class="job-title">Ericsson Telecomunicações Ltda <span class="intl-badge">Global Experience</span></span>
                     <span class="job-date">1998 — 2025</span>
                 </div>
-                <p><em>Core Network Consultant</em></p>
+                <p><strong>MSS & Core Network Consultant</strong></p>
                 <ul>
-                    <li>Gerenciamento de times globais (Índia/China) em projetos críticos de upgrade.</li>
-                    <li>Configuração de CCDM sobre Kubernetes e virtualização em nuvem (OpenStack).</li>
-                    <li>Troubleshooting de alta complexidade em protocolos de rede utilizando Wireshark.</li>
-                    <li>Design de rede 3G-LIS (interceptação legal) e monitoramento de KPIs de performance.</li>
+                    <li><strong>Atuação Internacional:</strong> Execução de projetos em campo e remotos no México, Líbano, Croácia, Chile, Nicarágua, Jamaica e outros.</li>
+                    <li><strong>Liderança:</strong> Gerenciamento de times técnicos na Índia e China para upgrades de rede no Brasil e Chile.</li>
+                    <li><strong>Expertise Técnica:</strong> Design de rede 3G-LIS, configuração de CCDM sobre Kubernetes e virtualização de Core Network (OpenStack).</li>
+                    <li><strong>Treinamento:</strong> Instrutor de melhoria de performance de rede (NPI) para equipes locais no Líbano.</li>
+                    <li><strong>Suporte Crítico:</strong> Atuação como SPOC (Single Point of Contact) em projetos de Rollout e controle de software.</li>
                 </ul>
             </div>
 
             <div class="job">
                 <div class="job-header">
                     <span class="job-title">Telesp Celular</span>
-                    <span class="job-date">Anterior a 1998</span>
+                    <span class="job-date">1993 — 1998</span>
                 </div>
-                <p>Operação e manutenção de centrais MSC e PTS.</p>
+                <p><strong>Técnico de Telecomunicações</strong></p>
+                <ul>
+                    <li>Operação e Manutenção de centrais de comutação MSC e PTS (Anchieta).</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Unisys Eletrônica</span>
+                    <span class="job-date">1989 — 1992</span>
+                </div>
+                <p><strong>Técnico Eletrônico</strong></p>
+                <ul>
+                    <li>Manutenção de hardware e sistemas eletrônicos básicos.</li>
+                </ul>
             </div>
         </section>
 
         <section>
-            <h2>Formação e Certificações</h2>
+            <h2>Educação & Certificações</h2>
             <ul>
                 <li><strong>MBA em Private Banking e Investimentos</strong> – Ibmec (2021)</li>
                 <li><strong>Engenharia Eletrônica</strong> – Universidade Santa Cecília</li>
                 <li><strong>Certificação Cisco CCNA</strong> – IBTA</li>
+                <li><strong>Core Network Virtualization</strong> – Ericsson (Croácia)</li>
             </ul>
         </section>
     </div>
